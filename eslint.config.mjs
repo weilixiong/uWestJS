@@ -9,7 +9,7 @@ import globals from 'globals';
 const sharedRules = {
   '@typescript-eslint/explicit-function-return-type': 'off',
   '@typescript-eslint/explicit-module-boundary-types': 'off',
-  '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+  '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^_' }],
   'prettier/prettier': 'error',
 };
 
@@ -38,7 +38,7 @@ export default [
     rules: {
       ...prettierConfig.rules,
       'prettier/prettier': 'error',
-      'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+      'no-unused-vars': ['error', { argsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^_' }],
       'no-console': 'off',
     },
   },
