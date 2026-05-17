@@ -1291,6 +1291,11 @@ export class UwsResponse extends Writable {
       finalBody = String(body);
     }
 
+    // RFC 9110 §9.3.2: HEAD responses must have identical headers to GET but no body.
+    if (this.req?.method === 'HEAD') {
+      finalBody = undefined;
+    }
+
     this.sending = true;
 
     // Apply compression if configured and body is present
